@@ -1,3 +1,5 @@
+//Dongyang Mirae University - Impormation Electronics - 20161678 - Kim Gyeongjin
+
 #include <stdio.h>
 
 int choose_drink()
