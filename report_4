@@ -71,7 +71,7 @@ void calculation(int m,int n) {
 
 int main()
 {
-	int pm=0, cn=0; //pm==put money, cn== choose number
+	int pm=0, cn=0; //pm==input money, cn== choose number
 
 	printf("금액을 입력하세요: ");
 
