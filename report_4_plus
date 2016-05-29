@@ -1,0 +1,111 @@
+//Dongyang Mirae University - Impormation Electronics - 20161678 - Kim Gyeongjin
+#include <stdio.h>
+
+int choose_drink()
+{
+	int gn=0;
+
+	while(1) {
+	
+	puts("--------------------------------------------------------------------------");
+	puts("1. 콜라: 600원 2. 사이다: 600원 3. 오렌지쥬스: 800원 4. 커피: 500원");
+	puts("--------------------------------------------------------------------------");
+	printf("상품을 선택하세요: ");
+	scanf("%d",&gn);
+	
+	if(gn==1||gn==2||gn==3||gn==4)
+		{
+		break;
+		}
+
+	else
+		{
+		puts("다시 선택해 주십시오.");
+		}
+	}
+
+	return gn;
+	
+}
+
+void calculation(int m,int n) {
+//m==money, n==number
+
+	int coin[5];
+
+	switch (n) {
+		
+		case 1 :
+		case 2 :
+		m-=600;	
+		break;
+		
+		case 3 :
+		m-=800;	
+		break;
+
+		case 4 :
+		m-=500;	
+		break;
+	}
+	//coin[0]==나머지를 저장
+			
+	coin[1]=m/500;
+
+	coin[0]=m%500;
+
+	coin[2]=coin[0]/100;
+
+	coin[0]%=100;
+
+	coin[3]=coin[0]/50;
+
+	coin[0]%=50;
+
+	coin[4]=coin[0]/10;
+
+
+	printf("잔액은 %d원으로\n500원짜리 %d개, 100원짜리 %d개, 50원짜리 %d개, 10원짜리 %d개가 나옵니다.\n", m, coin[1], coin[2], coin[3], coin[4]); 
+}
+
+int main()
+{
+
+
+	int pm=0, cn=0; //pm==put money, cn== choose number
+
+	int fh=0, oh=0, ft=0, te=0; //five hundred, one hundred, fifty, ten
+
+	printf("넣은 500원짜리 동전의 갯수 : ");
+	scanf("%d",&fh);
+	
+	printf("넣은 100원짜리 동전의 갯수 : ");
+	scanf("%d",&oh);
+
+	printf("넣은 50원짜리 동전의 갯수 : ");
+	scanf("%d",&ft);
+	
+	printf("넣은 10원짜리 동전의 갯수 : ");
+	scanf("%d",&te);
+	
+	pm=fh*500+oh*100+ft*50+te*10;
+	
+	puts("--------------------------------------------------------------------------");
+
+	printf("넣은 돈 : %d\n",pm);
+	
+	/////////////////////////////////////////////////////////
+	//                                                     //
+	//          printf("금액을 입력하세요: ");             //
+	//          scanf("%d",&pm);                           //
+	//                                                     //
+	/////////////////////////////////////////////////////////
+
+	cn=choose_drink();
+
+	/////////////////////////////////////////////////////////
+
+	calculation(pm,cn);
+
+	return 0;
+}
